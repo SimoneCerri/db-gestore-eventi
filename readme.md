@@ -57,10 +57,10 @@ durata totale (1040)
     - 
     
 - Selezionare tutti gli utenti admin ed editor (9)
-    - 
+    - SELECT * FROM users WHERE role_id IN (1,2) (9) ✅
     
 - Selezionare tutti i concerti (eventi con il tag “concerti”) (72)
-    - 
+    - SELECT * FROM event_tag WHERE tag_id = 1 (72) ✅
     
 - Selezionare tutti i tag e il prezzo medio degli eventi a loro collegati (11)
     - 
