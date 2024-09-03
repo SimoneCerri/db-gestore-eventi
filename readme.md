@@ -71,15 +71,15 @@ esse (82)
 
 - Selezionare tutti i partecipanti per l’evento “Concerto Classico Serale” (slug:
 concerto-classico-serale, id: 34) (30)
-    - 
+    - SELECT user_id FROM bookings WHERE event_id = 34 (30) ✅
     
 - Selezionare tutti i partecipanti all’evento “Festival Jazz Estivo” (slug:
 festival-jazz-estivo, id: 2) specificando nome e cognome (13)
-    - 
+    - SELECT users.first_name, users.last_name FROM users JOIN bookings ON bookings.user_id = users.id JOIN events ON events.id = bookings.event_id WHERE bookings.event_id = 2 (13) ✅
     
 - Selezionare tutti gli eventi sold out (dove il totale delle prenotazioni è uguale ai
 biglietti totali per l’evento) (18)
-    - 
+    - SELECT events.name FROM events JOIN bookings ON events.id = bookings.event_id GROUP BY events.name, events.total_tickets HAVING COUNT(bookings.id) = events.total_tickets (18) ✅
     
 - Selezionare tutte le location in ordine per chi ha ospitato più eventi (82)
     - 
