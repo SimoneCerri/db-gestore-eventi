@@ -63,7 +63,7 @@ durata totale (1040)
     - SELECT * FROM event_tag WHERE tag_id = 1 (72) ✅
     
 - Selezionare tutti i tag e il prezzo medio degli eventi a loro collegati (11)
-    - 
+    - SELECT tags.id, tags.name, ROUND(AVG(events.price),2) AS avg_price FROM tags JOIN event_tag ON tags.id = event_tag.tag_id JOIN events ON event_tag.event_id = events.id GROUP BY tags.id, tags.name (11) ✅
     
 - Selezionare tutte le location e mostrare quanti eventi si sono tenute in ognuna di
 esse (82)
