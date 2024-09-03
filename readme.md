@@ -54,7 +54,7 @@ durata totale (1040)
     - SELECT * FROM events WHERE user_id = 1202 (132) ✅
     
 - Selezionare il numero totale di eventi per ogni fascia di prezzo (81)
-    - 
+    - ?
     
 - Selezionare tutti gli utenti admin ed editor (9)
     - SELECT * FROM users WHERE role_id IN (1,2) (9) ✅
@@ -67,7 +67,7 @@ durata totale (1040)
     
 - Selezionare tutte le location e mostrare quanti eventi si sono tenute in ognuna di
 esse (82)
-    - 
+    - SELECT location_id, COUNT(*) AS number_of_events  FROM events GROUP BY location_id (82) ✅
 
 - Selezionare tutti i partecipanti per l’evento “Concerto Classico Serale” (slug:
 concerto-classico-serale, id: 34) (30)
